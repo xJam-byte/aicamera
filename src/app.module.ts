@@ -5,6 +5,7 @@ import { UserChildeModule } from "./user_childe/user_childe.module";
 import { AuthModule } from "./auth/auth.module";
 import { UserParent } from "./user_parent/user_parent.model";
 import { UserChild } from "./user_childe/user_childe.model";
+import { NotificationModule } from "./notifications/notification.module";
 
 @Module({
   controllers: [],
@@ -24,6 +25,7 @@ import { UserChild } from "./user_childe/user_childe.model";
     UserParentModule,
     UserChildeModule,
     AuthModule,
+    NotificationModule,
   ],
 })
 export class AppModule {}
