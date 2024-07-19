@@ -3,7 +3,9 @@ import { Column, Model, DataType, Table, HasMany } from "sequelize-typescript";
 import { UserChild } from "src/user_childe/user_childe.model";
 
 interface UserParentCreationAttrs {
-  fullName: string;
+  firstName: string;
+  lastName: string;
+  middleName: string;
   phoneNumber: string;
   address: string;
   email: string;
@@ -27,7 +29,19 @@ export class UserParent extends Model<UserParent, UserParentCreationAttrs> {
     type: DataType.STRING,
     allowNull: false,
   })
-  fullName: string;
+  firstName: string;
+  @ApiProperty({ example: "John Doe", description: "Full name of the parent" })
+  @Column({
+    type: DataType.STRING,
+    allowNull: false,
+  })
+  lastName: string;
+  @ApiProperty({ example: "John Doe", description: "Full name of the parent" })
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  middleName: string;
 
   @ApiProperty({
     example: "1234567890",
