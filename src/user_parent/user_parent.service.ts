@@ -12,9 +12,6 @@ export class UserParentService {
 
   async findOneByEmail(email: string): Promise<UserParent> {
     const user = await this.userModel.findOne({ where: { email } });
-    if (!user) {
-      throw new NotFoundException(`Parent with email ${email} not found`);
-    }
     return user;
   }
 
