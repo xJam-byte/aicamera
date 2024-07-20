@@ -13,11 +13,11 @@ import { NotificationModule } from "./notifications/notification.module";
   imports: [
     SequelizeModule.forRoot({
       dialect: "postgres",
-      host: "localhost",
-      port: 5432,
-      username: "postgres",
-      password: "root",
-      database: "aicamera",
+      host: process.env.DATABASE_HOST,
+      port: Number(process.env.DATABASE_PORT),
+      username: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PASSWORD,
+      database: process.env.DATABASE_NAME,
       models: [UserParent, UserChild],
       autoLoadModels: true,
       synchronize: true,
